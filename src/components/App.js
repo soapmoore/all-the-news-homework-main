@@ -4,8 +4,7 @@ import Nav from "./Nav";
 import Stories from "./Stories";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
-const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
-// const section = "arts";
+const nytapi = "0vivzjpviFu0asEzv5I3fzMtaYv9EmPC";
 
 function App() {
   const [stories, setStories] = React.useState([]);
@@ -30,21 +29,19 @@ function App() {
     )
       .then((response) => response.json())
       .then((data) => setStories(data.results))
-      .then(setLoading(true))
+      .then(setLoading(false))
       .catch((error) => {
         console.log(error);
       });
   }, [section]);
 
-  // if (loading) {
-  //   return <h2>Loading...</h2>;
-  // }
-
   return (
     <>
       <Header siteTitle="All the news the Fits We Print" />
+
       <Nav navItems={navItems} setSection={setSection} section={section} />
-      {loading || stories.length === 0 ? (
+
+      {loading || section.length === 0 ? (
         <h2>Loading...</h2>
       ) : (
         <Stories stories={stories} section={section} />

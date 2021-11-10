@@ -5,6 +5,7 @@ const Nav = (props) => {
   const svgStyles = {
     fill: "white",
   };
+
   return (
     <nav>
       <ul>
@@ -18,9 +19,9 @@ const Nav = (props) => {
           </a>
         </li>
 
-        {props.navItems.map((navItem) => (
+        {props.navItems.map((navItem, index) => (
           <NavItem
-            key={navItem.title}
+            key={index}
             navItem={navItem}
             setSection={props.setSection}
             section={props.section}

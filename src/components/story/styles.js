@@ -10,7 +10,6 @@ export const Entry = styled.section`
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
   margin-bottom: 1rem;
-  grid-area: "entry";
 `;
 
 export const StoryTitle = styled.h3`
